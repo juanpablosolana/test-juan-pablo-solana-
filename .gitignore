@@ -12,6 +12,7 @@
 /coverage
 /.nyc_output
 /.jest-cache
+/dist
 .DS_Store
 *.log
 .idea
@@ -19,3 +20,4 @@
 .cache
 .eslintcache
 package-lock.json
+..gitignore

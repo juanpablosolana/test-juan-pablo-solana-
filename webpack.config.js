@@ -11,9 +11,8 @@ const babelRules = {
   }
 }
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 const saasRules = {
-  test: /\.css$/,
+  test: /\.s[ac]ss$/i,
   use: [
     'style-loader',
     'css-loader',

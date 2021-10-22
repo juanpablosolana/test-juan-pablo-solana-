@@ -1,37 +1,40 @@
-import {React, useState,useEffect} from "react";
+import { React, useState, useEffect } from "react";
 import data from "../data/mail-data.json";
 import ShowData from "../components/showData";
+import createData from "./createData";
 
 const GetData = () => {
-  const [emailData,setEmailData]=useState(null);
+console.log(createData(data));
+  const [emailData, setEmailData] = useState(null);
   const [newEmail, setNewEmail] = useState([]);
- useEffect(()=>{
- },[emailData])
+  useEffect(() => {
+
+  }, [newEmail])
 
   return (
     <>
-    <div className="left">
-      {
-        data.map((email,index) => {
-          // console.log(email.toString());
-          return (
-            <section key={(index.toString())} className='card' onClick={()=>(setEmailData(email))}>
-              <div className='cardTitle'>{email.from}</div>
-              <div>{email.subject}</div>
-              <div>{email.date}</div>
-              {email.attachements ? (email.attachements.map((attachement) => {
-                return <div>{attachement.name}</div>;
-              })): <div> No attachement</div> }
-            </section>
+      <div className="left">
+        {
+          data.map((email, index) => {
+            // console.log(email.toString());
+            return (
+              <section key={(index.toString())} className='card' onClick={() => (setEmailData(email))}>
+                <div className='cardTitle'>{email.from}</div>
+                <div>{email.subject}</div>
+                <div>{email.date}</div>
+                {email.attachements ? (email.attachements.map((attachement) => {
+                  return <div>{attachement.name}</div>;
+                })) : <div> No attachement</div>}
+              </section>
+            )
+          }
           )
         }
-        )
-      }
-    </div>
-    <div className="right">
-        {emailData?<ShowData emailData={emailData}/>:'Select a Email'}
-    </div>
-   </>
+      </div>
+      <div className="right">
+        {emailData ? <ShowData emailData={emailData} /> : 'Select a Email'}
+      </div>
+    </>
   )
 }
 

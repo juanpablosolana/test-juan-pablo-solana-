@@ -1,6 +1,5 @@
 import React from 'react';
 const ShowData = ({ emailData }) => {
-  // console.log(emailData);
   return (
     <div>
       <p>

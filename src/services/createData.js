@@ -1,7 +1,8 @@
-import { React, useEffect, useState } from "react";
+import { React,useState } from "react";
 
 const createData = () => {
   const API = []
+  const [makeData, setMakeData] = useState(0)
   const [newData, setNewData] = useState([]);
   const [id, setId] = useState(0);
   const [name, setName] = useState('');
@@ -35,15 +36,19 @@ const createData = () => {
      "Redondo", "Camacho", "Rey", "Vera", "Otero", "Luque", "Galan", "Montes", "Rios", "Sierra", "Segura", "Carrillo", "Marcos", "Marti",
       "Soriano", "Mendoza"];
 
-  useEffect(() => {
     const makeAPI = () => {
       const rand_first = Math.floor(Math.random() * firstname.length);
       const rand_last = Math.floor(Math.random() * lastname.length);
       setName(`${firstname[rand_first]} ${lastname[rand_last]}`)
     }
-    makeAPI()
-  }, [])
 
-  return (name)
+    const interval = setInterval(() => {
+      makeAPI()
+      setMakeData(makeData + 1);
+    }, 90000);
+    interval
+    API.push( name )
+
+  return (API)
 }
 export default createData;

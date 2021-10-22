@@ -16,16 +16,31 @@ body {
   font-size: $fonstSize;
 }
 .app{
-  display:grid;
-  justify-content: center;
-  align-self: center;
-  grid-template-columns: 1.5fr 3fr;
-  max-width : 768px;
-  max-height: 1024px;
+  // margin: auto;
+  // display:grid;
+  // justify-content: center;
+  // align-self: center;
+  // grid-template-columns: 1.5fr 3fr;
+  // max-width : 768px;
+  // max-height: 1024px;
+  // position: absolute;
+
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
 }
 
 .left{
-  display: block
+  position: relative;
+  z-index: 100;
+  width: 40%;
+  overflow-y: hidden;
+  display: block;
+  flex: 40%;
 }
 
 .right{
@@ -34,6 +49,9 @@ body {
   background: $colorGray;
   border-block-end: $fontColor .1rem solid;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+  width: 40%;
+  height: 100%;
+  position: absolute;
 }
 
 .card {

@@ -1,4 +1,4 @@
-import { React, useEffect } from "react";
+import React from "react";
 import GetData from "./services/getData";
 import "./styles/style.scss";
 const App = () => {

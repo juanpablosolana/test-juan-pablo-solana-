@@ -3,7 +3,7 @@ import { React,useState } from "react";
 const createData = () => {
   const API = []
   const [makeData, setMakeData] = useState(0)
-  const [newData, setNewData] = useState([]);
+  const [newData, setNewData] = useState("");
   const [id, setId] = useState(0);
   const [name, setName] = useState('');
   const [from, setFrom] = useState('');
@@ -35,6 +35,7 @@ const createData = () => {
      "Gallardo", "Rojas", "Pardo", "Merino", "Franco", "Espinosa", "Izquierdo", "Lara", "Rivas", "Silva", "Rivera", "Casado", "Arroyo",
      "Redondo", "Camacho", "Rey", "Vera", "Otero", "Luque", "Galan", "Montes", "Rios", "Sierra", "Segura", "Carrillo", "Marcos", "Marti",
       "Soriano", "Mendoza"];
+  const domains = ["gmail.com", "google.com", "facebok.com", "youtube.com","amazon.com","facebook.com","yahoo.com","reddit.com","wikipedia.com","ebay.com"]
 
     const makeAPI = () => {
       const rand_first = Math.floor(Math.random() * firstname.length);
@@ -47,7 +48,16 @@ const createData = () => {
       setMakeData(makeData + 1);
     }, 90000);
     interval
-    API.push( name )
+
+    API.push( {
+      id: id,
+      "name": name,
+      "from": from,
+      "subject": subject,
+      "message": message,
+      "date": date,
+      "attachements": attachements
+    } )
 
   return (API)
 }

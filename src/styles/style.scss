@@ -16,42 +16,34 @@ body {
   font-size: $fonstSize;
 }
 .app{
-  // margin: auto;
-  // display:grid;
-  // justify-content: center;
-  // align-self: center;
-  // grid-template-columns: 1.5fr 3fr;
+  margin: auto;
+  display:flex;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
   // max-width : 768px;
-  // max-height: 1024px;
-  // position: absolute;
-
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
+  max-height: 1024px;
+  height: 100vh;
 }
 
 .left{
-  position: relative;
-  z-index: 100;
-  width: 40%;
-  overflow-y: hidden;
-  display: block;
-  flex: 40%;
+  width: 30%;
+  overflow: hide;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.inboxHeader{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .right{
-  display: block;
-  padding-inline: 2rem;
-  background: $colorGray;
-  border-block-end: $fontColor .1rem solid;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
-  width: 40%;
-  height: 100%;
-  position: absolute;
+  width: 70%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card {

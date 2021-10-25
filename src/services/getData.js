@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import data from "../data/mail-data.json";
 import ShowData from "../components/showData";
 import createData from "./createData";
+import InboxHeader from "../components/inboxHeader";
 
 const GetData = () => {
 console.log(createData(data));
@@ -14,6 +15,7 @@ console.log(createData(data));
   return (
     <>
       <div className="left">
+        {<InboxHeader />}
         {
           data.map((email, index) => {
             // console.log(email.toString());

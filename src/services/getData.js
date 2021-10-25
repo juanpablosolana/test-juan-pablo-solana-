@@ -1,21 +1,20 @@
 import { React, useState, useEffect } from "react";
 import data from "../data/mail-data.json";
 import ShowData from "../components/showData";
-import createData from "./createData";
 import InboxHeader from "../components/inboxHeader";
 
 const GetData = () => {
-console.log(createData(data));
   const [emailData, setEmailData] = useState(null);
   const [newEmail, setNewEmail] = useState([]);
+  const [emailInbox, setEmailInbox] = useState();
   useEffect(() => {
-
-  }, [newEmail])
+    setEmailInbox(data.length);
+  }, [data]);
 
   return (
     <>
       <div className="left">
-        {<InboxHeader />}
+        {<InboxHeader emailInbox={emailInbox}/>}
         {
           data.map((email, index) => {
             // console.log(email.toString());

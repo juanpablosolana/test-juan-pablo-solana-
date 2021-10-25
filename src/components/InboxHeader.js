@@ -1,10 +1,12 @@
 import React from "react";
 import SearchMessage from "./SearchMessage";
-const inboxHeader = () => {
+const inboxHeader = ({emailInbox}) => {
+
   return(
     <div className="inboxHeader">
       <div className="inboxHeader__title">
-        <h1>Inbox</h1>
+        <p>Inbox</p>
+        <small className="inboxHeader__number">{emailInbox}</small>
       </div>
       <SearchMessage />
     </div>
